@@ -45,11 +45,11 @@ def sumdata():
 
 	return (sumquan,sumtotal)
 
+##################
 
-#######################################
 GUI = Tk()
 GUI.geometry('700x600')
-GUI.title('โปรแกรมของฉัน')
+GUI.title('โปรแกรมสำหรับแม่ค้าทุเรียน v.0.0.1')
 
 file = PhotoImage(file='durian.png')
 IMG = Label(GUI,image=file,text='')
@@ -58,7 +58,7 @@ IMG.pack()
 L1 = Label(GUI,text='โปรแกรมคำนวณทุเรียน',font=('Angsana New',30,'bold'),fg='green')
 L1.pack() #place(x,y) , grid(row=0,column=0)
 
-L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน',font=('Angsana New New',20))
+L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน (กิโลกรัม)',font=('Angsana New New',20))
 L2.pack()
 
 v_quantity = StringVar()  #ตำแหน่งตัวแปรที่ใช้เก็บข้อมูลของช่องกรอก
@@ -102,6 +102,6 @@ def SummaryData(event):
 
 
 GUI.bind('<F2>',SummaryData)	# ตรวจสอบ event ว่ามีการกด keyboard อะไร เพื่อให้ฟังค์ชั่นทำงาน
-
+GUI.bind('<F1>',SummaryData)	
 E1.focus()  # ให้ cursor ไปยังตำแหน่งของ E1
 GUI.mainloop()
